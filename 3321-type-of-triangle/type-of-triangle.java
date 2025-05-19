@@ -3,9 +3,6 @@ class Solution {
         
         int flag=0;
         Set<Integer> a = new HashSet<>();
-        for(int n:nums){
-            a.add(n);
-        }
         
 
         if(nums[1]+nums[2]>nums[0]){
@@ -17,6 +14,12 @@ class Solution {
         }   
         else{
             flag=0;
+        }
+        if (flag==1){
+             
+        for(int n:nums){
+            a.add(n);
+        }
         }
 
 
