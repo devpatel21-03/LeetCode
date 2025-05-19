@@ -15,11 +15,12 @@ class Solution {
         else{
             flag=0;
         }
+        
         if (flag==1){
              
-        for(int n:nums){
-            a.add(n);
-        }
+            for(int n:nums){
+                a.add(n);
+            }
         }
 
 
