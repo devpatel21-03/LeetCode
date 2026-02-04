@@ -5,15 +5,14 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        res = []
-        for i in range(len(nums)):
-            for j in range(i+1):
-                if i == j:
-                    continue
-                else:
-                    sum = nums[i]+nums[j]
-                    if(sum == target):
-                        res.append(i)
-                        res.append(j)
-                        return res       
-        
+        seen = {}  # Dictionary to store {value: index}
+
+        for i, num in enumerate(nums):
+            sub = target - num  # Find the needed complement
+            
+            # Check if we've already seen this complement
+            if sub in seen:
+                return [seen[sub], i]
+            
+            # If not, store the current number and its index
+            seen[num] = i
